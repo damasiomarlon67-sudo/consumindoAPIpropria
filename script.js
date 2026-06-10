@@ -9,8 +9,8 @@ const buscarAlunos = async () => {
 };
 
 const enviarAluno = async () => {
-    const nome = document.querySelector("#novo-nome").value;
-    const idade = document.querySelector("#novo-idade").value;
+    const nome = document.querySelector("#input-nome").value;
+    const idade = document.querySelector("#input-idade").value;
     const feedback = document.querySelector('#feedback');
 
     try {
@@ -57,14 +57,14 @@ const renderAlunos = async () => {
         elemLi.innerHTML = `Nome: ${aluno.nome} - Idade: ${aluno.idade}`;
         const btRemover = document.createElement('input');
         btRemover.type = 'button';
-        btRemover.classList.add('dark');
+        btRemover.classList.add('botoes-remover');
         btRemover.dataset.id = aluno._id;
         btRemover.value = '❌';
         btRemover.onclick = removerAluno;
 
         const btEditar = document.createElement('input');
         btEditar.type = 'button';
-        btEditar.classList.add('dark');
+        btEditar.classList.add('botoes-editar');
         btEditar.dataset.id = aluno._id;
         btEditar.value = '✏️';
         btEditar.onclick = editarAluno;
@@ -79,12 +79,12 @@ const editarAluno = async (evento) => {
     const inputNome = document.createElement('input');
     inputNome.type = 'text';
     inputNome.placeholder = 'Nome';
-    inputNome.id = 'editar-nome';
+    inputNome.id = 'input-editar-nome';
 
     const inputIdade = document.createElement('input');
     inputIdade.type = 'number';
     inputIdade.placeholder = 'Idade';
-    inputIdade.id = 'editar-idade';
+    inputIdade.id = 'input-editar-idade';
 
     const btAtualizar = document.createElement('button');
     btAtualizar.innerText = '✔️';
@@ -97,8 +97,8 @@ const editarAluno = async (evento) => {
 }
 
 const atualizarAluno = async (evento) => {
-    const nome = document.querySelector('#editar-nome').value;
-    const idade = document.querySelector('#editar-idade').value;
+    const nome = document.querySelector('#input-editar-nome').value;
+    const idade = document.querySelector('#input-editar-idade').value;
     const feedback = document.querySelector('#feedback');
 
     try {
@@ -130,26 +130,16 @@ const limparAlunos = () => {
 const trocarCores = (evento) => {
     const estado = evento.target.value;
     
-    if (estado === '🌘') {
-        const todosElementosClaros = document.querySelectorAll('.light');
-        todosElementosClaros.forEach((elemento) => {
-            elemento.classList.remove('light');
-            elemento.classList.add('dark');
-        })
-        evento.target.value = '☀️';
-    } else {
-        const todosElementosEscuros = document.querySelectorAll('.dark');
-        todosElementosEscuros.forEach((elemento) => {
-            elemento.classList.remove('dark');
-            elemento.classList.add('light');
-        });
-        evento.target.value = '🌘';
+    if (estado === 'claro') {
+        document.head.querySelector('#css').setAttribute('href', 'light.css');
+    } else if (estado === 'escuro') {
+        document.head.querySelector('#css').setAttribute('href', 'dark.css');
     }
 }
 
-const botaoDarkMode = document.querySelector('#dark-mode');
-const botaoEnviar = document.querySelector('#enviar');
+const selectMode = document.querySelector('#select-tema');
+const botaoEnviar = document.querySelector('#botao-enviar');
 renderAlunos()
 
-botaoDarkMode.addEventListener('click', trocarCores)
+selectMode.addEventListener('click', trocarCores)
 botaoEnviar.addEventListener('click', enviarAluno);

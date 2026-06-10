@@ -4,21 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alunos do 4INFO3</title>
-    <link rel="stylesheet" href="style.css">
+    <link id="css" rel="stylesheet" href="light.css">
 </head>
-<body class="dark">
-    <input type="button" id="dark-mode" value="☀️">
-    <h1>Alunos do 4INFO3</h1>
-    <h2>Inserir novo aluno:</h2>
-    <label>
+<body>
+    <label id="label-select"> Temas
+        <select id="select-tema">
+           <option id="option-claro" value="claro">Claro</option>
+           <option id="option-escuro" value="escuro">Escuro</option>
+        </select>
+    </label>
+    <h1 id="titulo">Alunos do 4INFO3</h1>
+    <h2 id="subtitulo">Inserir novo aluno:</h2>
+    <label id="label-input-nome">
         Nome:
-        <input type="text" id="novo-nome">
+        <input type="text" id="input-nome">
     </label>
-    <label>
+    <label id="label-input-idade">
         Idade:
-        <input type="number" id="novo-idade">
+        <input type="number" id="input-idade">
     </label>
-    <input type="button" id="enviar" value="Enviar"><br>
+    <input type="button" id="botao-enviar" value="Enviar"><br>
     <span id="feedback"></span>
     <ul id="lista-alunos"></ul>
 
