@@ -1,0 +1,121 @@
+body {
+    background-color: #0b0f19;
+    color: #00ffcc;
+    min-height: 100vh;
+    font-family: sans-serif;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 250px; /* Reduzi um pouco a altura para enquadrar melhor */
+    background-image: url('cidade.webp');
+    background-size: auto 100%; /* Ajusta 100% da altura da imagem sem dar zoom na largura */
+    background-repeat: repeat-x; /* Repete a imagem para os lados sem distorcer */
+    background-position: center;
+    z-index: -1;
+    opacity: 0.3; /* Deixa o fundo um pouco mais discreto para focar nos textos */
+    border-top: 2px solid #ff007f;
+    border-bottom: 2px solid #ff007f;
+    box-shadow: 0 0 20px #ff007f;
+}
+
+#titulo, #subtitulo {
+    color: #ff007f;
+    text-shadow: 0 0 8px #ff007f;
+}
+
+input[type="text"], input[type="number"] {
+    background-color: #0b0f19;
+    border: 1px solid #ff007f;
+    color: #ffffff;
+    padding: 6px;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="text"]:focus, input[type="number"]:focus {
+    border-color: #00ffcc;
+    box-shadow: 0 0 12px #00ffcc;
+}
+
+#botao-enviar {
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    background-color: transparent;
+    color: #ff007f;
+    border: 2px solid #ff007f;
+    box-shadow: 0 0 8px #ff007f;
+    transition: background-color 0.2s, transform 0.1s, box-shadow 0.2s;
+    margin-top: 15px;
+}
+
+#botao-enviar:hover {
+    background-color: #ff007f;
+    color: #0b0f19;
+    box-shadow: 0 0 15px #ff007f;
+}
+
+#botao-enviar:active {
+    transform: scale(0.98);
+}
+
+#lista-alunos li {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    background-color: rgba(18, 24, 36, 0.85);
+    border-radius: 6px;
+    border: 1px solid #00ffcc;
+    box-shadow: 0 0 5px rgba(0, 255, 204, 0.2);
+    color: #ffffff;
+    max-width: 400px;
+}
+
+.botoes-remover, .botoes-editar, .botao-atualizar {
+    border: 1px solid #00ffcc;
+    background-color: transparent;
+    font-size: 14px;
+    padding: 6px 10px;
+    margin-left: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.botoes-remover:hover {
+    background-color: rgba(255, 0, 0, 0.2);
+    border-color: #ff0000;
+    box-shadow: 0 0 12px #ff0000;
+}
+
+.botoes-editar:hover {
+    background-color: rgba(255, 200, 0, 0.2);
+    border-color: #ffcc00;
+    box-shadow: 0 0 12px #ffcc00;
+}
+
+.botao-atualizar:hover {
+    background-color: rgba(0, 255, 0, 0.2);
+    border-color: #00ff00;
+    box-shadow: 0 0 12px #00ff00;
+}
+
+#input-editar-nome, #input-editar-idade {
+    padding: 4px 8px;
+    background-color: #0b0f19;
+    border: 1px solid #475569;
+    color: #ffffff;
+    border-radius: 4px;
+    margin-left: 6px;
+    font-size: 13px;
+    width: 80px;
+}
