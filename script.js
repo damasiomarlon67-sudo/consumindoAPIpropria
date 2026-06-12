@@ -48,9 +48,8 @@ const removerAluno = async (evento) => {
 };
 
 const renderAlunos = async () => {
-   // const alunos = await buscarAlunos();
-    const alunos = [{nome:"João",idade: "23"},{nome:"João",idade: "23"},{nome:"João",idade: "23"}]
-    const elemUl = document.querySelector('#lista-alunos');
+const alunos = await buscarAlunos();
+const elemUl = document.querySelector('#lista-alunos');
 
     for (let aluno of alunos) {
         const elemLi = document.createElement('li');
