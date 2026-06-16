@@ -49,6 +49,7 @@ const removerAluno = async (evento) => {
 
 const renderAlunos = async () => {
 const alunos = await buscarAlunos();
+
 const elemUl = document.querySelector('#lista-alunos');
 
     for (let aluno of alunos) {
@@ -136,6 +137,8 @@ const trocarCores = (evento) => {
         document.head.querySelector('#css').setAttribute('href', 'dark.css');
     } else if (estado === 'cyberpunk') {
         document.head.querySelector('#css').setAttribute('href', 'joao.css');
+    } else if (estado === 'thewalkingdead') {
+        document.head.querySelector('#css').setAttribute('href', 'Marlon.css');
     }
 }
 
