@@ -5,14 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alunos do 4INFO3</title>
     <link id="css" rel="stylesheet" href="light.css">
+
 </head>
 <body>
-    <label id="label-select"> Temas
+    <label id="label-select"> 
         <select id="select-tema">
            <option id="option-claro" value="claro">Claro</option>
            <option id="option-escuro" value="escuro">Escuro</option>
-           <option id="option-cyberpunk" value="cyberpunk">Cyberpunk</option>
            <option id="option-thewalkingdead" value="thewalkingdead">The Walking Dead</option>   
+           <option id="option-cyberpunk" value="cyberpunk">Cyberpunk</option>  
+           <option id="option-blackstar" value="blackstar">Blackstar</option>
+           <option id="option-8bit" value="8bit">8bit</option> 
         </select>
     </label>
     <h1 id="titulo">Alunos do 4INFO3</h1>
@@ -29,6 +32,12 @@
         Telefone:
         <input type="tel" id="input-telefone" placeholder="(00) 00000-0000">
     </label>
+
+    <label id="label-input-email">
+        Email:
+        <input type="email" id="input-email">
+    </label>
+
     <input type="button" id="botao-enviar" value="Enviar"><br>
     <span id="feedback"></span>
     <ul id="lista-alunos"></ul>
